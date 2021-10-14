@@ -27,7 +27,7 @@ exports.createNewPost = async (req, res, next) => {
 exports.getPostById = async (req, res, next) => {
   try {
     let postId = req.params.id;
-    let [post, _] = Post.findById(postId);
+    let [post, _] = await Post.findById(postId);
 
     res.status(200).json({post: post[0]});
   } catch (error) {
