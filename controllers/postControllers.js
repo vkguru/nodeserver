@@ -19,7 +19,7 @@ exports.createNewPost = async (req, res, next) => {
     await post.save();
     res.status(201).json({message: "Post created"})
   } catch (error) {
-      console.log
+      console.log(error);
       next(error); 
   }
 }
@@ -31,7 +31,7 @@ exports.getPostById = async (req, res, next) => {
 
     res.status(200).json({post: post[0]});
   } catch (error) {
-      console.log
+      console.log(error);
       next(error); 
   }
 }
